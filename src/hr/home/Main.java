@@ -24,23 +24,32 @@ public class Main {
         for (String s : znakoviRed) {
             if (s.equals("=")) {
                 lista.add("OP_PRIDRUZI " + lineNumber + " =");
-            } else if (s.equals("+")) {
+            }
+            else if (s.equals("+")) {
                 lista.add("OP_PLUS " + lineNumber + " +");
-            } else if (s.equals("-")) {
+            }
+            else if (s.equals("-")) {
                 lista.add("OP_MINUS " + lineNumber + " -");
-            } else if (s.equals("/")) {
+            }
+            else if (s.equals("/")) {
                 lista.add("OP_DIJELI " + lineNumber + " /");
-            } else if (s.equals("*")) {
+            }
+            else if (s.equals("*")) {
                 lista.add("OP_PUTA " + lineNumber + " *");
-            } else if (s.equals("za")) {
+            }
+            else if (s.equals("za")) {
                 lista.add("KR_ZA " + lineNumber + " za");
-            } else if (s.equals("az")) {
+            }
+            else if (s.equals("az")) {
                 lista.add("KR_AZ " + lineNumber + " az");
-            } else if (s.equals("od")) {
+            }
+            else if (s.equals("od")) {
                 lista.add("KR_OD " + lineNumber + " od");
-            } else if (s.equals("do")) {
+            }
+            else if (s.equals("do")) {
                 lista.add("KR_DO " + lineNumber + " do");
-            } else if (s.matches("^[a-zA-z][a-zA-z0-9]*$")) {
+            }
+            else if (s.matches("^[a-zA-z][a-zA-z0-9]*$")) {
                 lista.add("IDN " + lineNumber + " " + s);
             }
 
