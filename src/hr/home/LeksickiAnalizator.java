@@ -61,10 +61,10 @@ public class LeksickiAnalizator{
             else if (s.equals(")")) {
                 lista.add("D_ZAGRADA " + lineNumber + " )");
             }
-            else if (s.matches("^[a-zA-z][a-zA-z0-9]*$")) {
+            else if (s.length() > 0 && provjeriIme(s)){
                 lista.add("IDN " + lineNumber + " " + s);
             }
-            else if (s.matches("[0-9]+")) {
+            else if (s.length() > 0 && provjeriBroj(s)){
                 lista.add("BROJ " + lineNumber + " " + s);
             }
             else {
@@ -78,6 +78,29 @@ public class LeksickiAnalizator{
 
 
         return lista;
+    }
+
+    private static boolean provjeriIme (String s) {
+        boolean value = true;
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isAlphabetic(s.charAt(i))) {
+                value = false;
+            }
+        }
+
+        return value;
+
+    }
+
+    private static boolean provjeriBroj (String s) {
+        boolean value = true;
+        for (int i = 0; i < s.length(); i++ ) {
+            if (!Character.isDigit(s.charAt(i))) {
+                value = false;
+            }
+        }
+
+        return value;
     }
 
     private static void slozeniIzraz(String s, int lineNumber, List<String> lista) {
